@@ -2,9 +2,9 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "start.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "babel-node index"
+    "start": "babel-node server/index"
   },
   "author": "Emmanuel <emmanwogbo20@yahoo.com>",
   "license": "MIT",
