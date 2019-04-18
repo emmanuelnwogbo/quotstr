@@ -3,10 +3,10 @@ import path from 'path';
 
 const filePath = path.join(__dirname, 'quotes.json');
 let quotes;
-let num = 0;
 
 export default app => {
   app.get('/', (req, res) => {
+    let num = 0;
     fs.readFile(filePath, {
       encoding: 'utf-8'
     }, (err, data) => {

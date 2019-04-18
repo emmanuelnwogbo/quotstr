@@ -14,10 +14,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var filePath = _path["default"].join(__dirname, 'quotes.json');
 
 var quotes;
-var num = 0;
 
 var _default = function _default(app) {
   app.get('/', function (req, res) {
+    var num = 0;
+
     _fs["default"].readFile(filePath, {
       encoding: 'utf-8'
     }, function (err, data) {
