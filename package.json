@@ -4,7 +4,9 @@
   "description": "",
   "main": "server/index.js",
   "scripts": {
-    "start": "babel-node server/index"
+    "start": "node dist/index",
+    "dev": "babel-node server/index",
+    "build": "babel ./server --out-dir dist"
   },
   "author": "Emmanuel <emmanwogbo20@yahoo.com>",
   "license": "MIT",

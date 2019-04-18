@@ -1,1 +1,1 @@
-web: node babel-node index.js
+web: node dist/index.js
