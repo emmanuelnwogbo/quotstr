@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-//const filePath = path.join(__dirname, 'quotes.json');
+const filePath = path.join(__dirname, 'quotes.json');
 const filePath2 = path.join(__dirname, 'quotes.js');
 let quotes;
 
@@ -29,7 +29,7 @@ let quotes;
 export default app => {
   app.get('/', (req, res) => {
     let results = [];
-    fs.readFile(filePath2, {
+    fs.readFile(filePath, {
       encoding: 'utf-8'
     }, (err, data) => {
       if (!err) {
@@ -37,6 +37,7 @@ export default app => {
         quotes.forEach(quote => {
           if (Number(`${quotes.indexOf(quote)}`) <= Number(req.headers.limitend) &&
             Number(`${quotes.indexOf(quote)}`) >= Number(req.headers.limitstart)) {
+            quote.id = quotes.indexOf(quote);
             return results.push(quote);
           }
         });

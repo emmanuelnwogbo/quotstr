@@ -1,3 +1,5 @@
+"use strict";
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -7,13 +9,10 @@ var _fs = _interopRequireDefault(require("fs"));
 
 var _path = _interopRequireDefault(require("path"));
 
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-}
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-//const filePath = path.join(__dirname, 'quotes.json');
+var filePath = _path["default"].join(__dirname, 'quotes.json');
+
 var filePath2 = _path["default"].join(__dirname, 'quotes.js');
 
 var quotes;
@@ -42,13 +41,14 @@ var _default = function _default(app) {
   app.get('/', function (req, res) {
     var results = [];
 
-    _fs["default"].readFile(filePath2, {
+    _fs["default"].readFile(filePath, {
       encoding: 'utf-8'
     }, function (err, data) {
       if (!err) {
         quotes = JSON.parse(data);
         quotes.forEach(function (quote) {
           if (Number("".concat(quotes.indexOf(quote))) <= Number(req.headers.limitend) && Number("".concat(quotes.indexOf(quote))) >= Number(req.headers.limitstart)) {
+            quote.id = quotes.indexOf(quote);
             return results.push(quote);
           }
         });
