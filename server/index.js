@@ -14,7 +14,7 @@ app.use(cors());
 
 Routes(app);
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT, error => {
   if (error) {

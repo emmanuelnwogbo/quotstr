@@ -17,7 +17,7 @@ app.use(_bodyParser["default"].urlencoded({
 }));
 app.use((0, _cors["default"])());
 (0, _routes["default"])(app);
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, function (error) {
   if (error) {
     return console.log(error);
