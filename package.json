@@ -5,10 +5,10 @@
   "main": "server/index.js",
   "scripts": {
     "start": "node dist/index",
-    "dev": "babel-node server/index",
+    "dev": "nodemon --exec babel-node server/index",
     "build": "babel ./server --out-dir dist"
   },
-  "author": "Emmanuel <emmanwogbo20@yahoo.com>",
+  "author": "Emmanuel <nerdyemmanuel@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
