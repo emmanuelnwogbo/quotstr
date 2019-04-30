@@ -55,7 +55,7 @@ function sendQuotes(limit, res) {
         return res.status(200).send({
           message: 'data received',
           dataLength: quotes.length,
-          quotes: quotes
+          data: data
         });
       }
 

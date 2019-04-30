@@ -39,7 +39,7 @@ function sendQuotes(limit, res) {
         return res.status(200).send({
           message: 'data received',
           dataLength: quotes.length,
-          quotes
+          data
         })
       }
       return console.log(err)
