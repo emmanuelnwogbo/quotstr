@@ -141,6 +141,10 @@ var _default = function _default(app) {
     if (req.headers.limitend) {
       var limitend = req.headers.limitend;
       return sendQuotes(limitend, res);
+    } else {
+      res.status(200).send({
+        message: 'hello from quotes api'
+      });
     }
   });
 };

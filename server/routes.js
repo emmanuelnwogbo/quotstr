@@ -117,5 +117,10 @@ export default app => {
       let { limitend } = req.headers
       return sendQuotes(limitend, res)
     }
+    else {
+      res.status(200).send({
+        message: 'hello from quotes api',
+      })
+    }
   })
 }
