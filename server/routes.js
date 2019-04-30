@@ -31,7 +31,7 @@ const filePath5 = path.join(__dirname, 'quotes5.js');
 
 function sendQuotes(limit, res) {
   if (limit <= 20) {
-    return fs.readFile(filePath1, {
+    return fs.readFile(filePath, {
       encoding: 'utf-8'
     }, (err, data) => {
       let quotes = JSON.parse(data);
@@ -39,7 +39,7 @@ function sendQuotes(limit, res) {
         return res.status(200).send({
           message: 'data received',
           dataLength: quotes.length,
-          data
+          quotes
         })
       }
       return console.log(err)
