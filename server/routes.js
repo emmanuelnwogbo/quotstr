@@ -2,11 +2,12 @@ import fs from 'fs';
 import path from 'path';
 
 const filePath = path.join(__dirname, 'quotes.json');
-const filePath1 = path.join(__dirname, 'quotes.js');
-const filePath2 = path.join(__dirname, 'quotes2.js');
-const filePath3 = path.join(__dirname, 'quotes3.js');
-const filePath4 = path.join(__dirname, 'quotes4.js');
-const filePath5 = path.join(__dirname, 'quotes5.js');
+const filePath1 = path.join(__dirname, 'quotes1.json');
+const filePath2 = path.join(__dirname, 'quotes2.json');
+const filePath3 = path.join(__dirname, 'quotes3.json');
+const filePath4 = path.join(__dirname, 'quotes4.json');
+const filePath5 = path.join(__dirname, 'quotes5.json');
+//const filepathJson = path.join(__dirname, 'quotes5.json');
 
 /*fs.readFile(filePath, {
   encoding: 'utf-8'
@@ -31,15 +32,16 @@ const filePath5 = path.join(__dirname, 'quotes5.js');
 
 function sendQuotes(limit, res) {
   if (limit <= 20) {
-    return fs.readFile(filePath, {
+    return fs.readFile(filePath1, {
       encoding: 'utf-8'
     }, (err, data) => {
       let quotes = JSON.parse(data);
+      console.log(quotes)
       if (!err) {
         return res.status(200).send({
           message: 'data received',
           dataLength: quotes.length,
-          quotes
+          data
         })
       }
       return console.log(err)

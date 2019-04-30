@@ -13,15 +13,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var filePath = _path["default"].join(__dirname, 'quotes.json');
 
-var filePath1 = _path["default"].join(__dirname, 'quotes.js');
+var filePath1 = _path["default"].join(__dirname, 'quotes1.json');
 
-var filePath2 = _path["default"].join(__dirname, 'quotes2.js');
+var filePath2 = _path["default"].join(__dirname, 'quotes2.json');
 
-var filePath3 = _path["default"].join(__dirname, 'quotes3.js');
+var filePath3 = _path["default"].join(__dirname, 'quotes3.json');
 
-var filePath4 = _path["default"].join(__dirname, 'quotes4.js');
+var filePath4 = _path["default"].join(__dirname, 'quotes4.json');
 
-var filePath5 = _path["default"].join(__dirname, 'quotes5.js');
+var filePath5 = _path["default"].join(__dirname, 'quotes5.json'); //const filepathJson = path.join(__dirname, 'quotes5.json');
+
 /*fs.readFile(filePath, {
   encoding: 'utf-8'
 }, (err, data) => {
@@ -46,16 +47,17 @@ var filePath5 = _path["default"].join(__dirname, 'quotes5.js');
 
 function sendQuotes(limit, res) {
   if (limit <= 20) {
-    return _fs["default"].readFile(filePath, {
+    return _fs["default"].readFile(filePath1, {
       encoding: 'utf-8'
     }, function (err, data) {
       var quotes = JSON.parse(data);
+      console.log(quotes);
 
       if (!err) {
         return res.status(200).send({
           message: 'data received',
           dataLength: quotes.length,
-          quotes: quotes
+          data: data
         });
       }
 
