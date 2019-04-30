@@ -143,7 +143,7 @@ var _default = function _default(app) {
       return sendQuotes(limitend, res);
     } else {
       res.status(200).send({
-        message: 'hello from quotes api'
+        message: 'Welcome. Hello from quotes api'
       });
     }
   });

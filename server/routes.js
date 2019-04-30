@@ -119,7 +119,7 @@ export default app => {
     }
     else {
       res.status(200).send({
-        message: 'hello from quotes api',
+        message: 'Welcome. Hello from quotes api',
       })
     }
   })
